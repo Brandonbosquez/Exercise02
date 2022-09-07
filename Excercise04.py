@@ -56,9 +56,9 @@ while guess != number :
 print("Correct!")
 
 #5
-user = input("Set your username: ")
-word = input("Set your password: ")
-print("Please remember this information! You have 5 attempts")
+user = "python"
+word = "rules"
+print("Please remember the [USERNAME] & [PASSWORD]! You have 5 attempts")
 n = 0
 while n < 5 :
     user_at = input("Please enter your username: ")
@@ -71,6 +71,11 @@ while n < 5 :
     elif user_at == user and pass_at == word :
         print("Welcome")
         break
+if att = 0
+    print("ACCESS DENIED")
+Print("Program Ended")
+
+#6
 
 
 
