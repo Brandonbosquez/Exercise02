@@ -1,4 +1,6 @@
 #1
+import random
+
 n = 1
 while n <= 1000 :
     if n % 3 == 0 :
@@ -42,6 +44,8 @@ print("Your smallest number is: ", least)
 print("Program ended")
 
 #4
+Print("Let's play a guessing game. I will generate a number from 1 to 10 and you have to guess it")
+number = random.randint(1,10)
 
 #
 
