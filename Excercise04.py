@@ -54,7 +54,23 @@ while guess != number :
     elif guess < number :
         print("Too Low")
 print("Correct!")
-#
+
+#5
+user = input("Set your username: ")
+word = input("Set your password: ")
+print("Please remember this information! You have 5 attempts")
+n = 0
+while n < 5 :
+    user_at = input("Please enter your username: ")
+    pass_at = input("Please enter your password: ")
+    if user_at != user or pass_at != word :
+        n = n + 1
+        print("Incorrect")
+        att = 5 - int(n)
+        print("Attempts left: ", att)
+    elif user_at == user and pass_at == word :
+        print("Welcome")
+        break
 
 
 
