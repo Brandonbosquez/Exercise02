@@ -44,9 +44,16 @@ print("Your smallest number is: ", least)
 print("Program ended")
 
 #4
-Print("Let's play a guessing game. I will generate a number from 1 to 10 and you have to guess it")
+print("Let's play a guessing game. I will generate a number from 1 to 10 and you have to guess it")
 number = random.randint(1,10)
-
+guess = 0
+while guess != number :
+    guess = int(input("Please enter your guess: "))
+    if guess > number :
+        print("Too High")
+    elif guess < number :
+        print("Too Low")
+print("Correct!")
 #
 
 
