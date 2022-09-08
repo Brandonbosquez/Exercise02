@@ -30,5 +30,9 @@ while entra != "" :
         numbers.append(int(entra))
 entra = int
 numbers.sort(reverse=True)
+print("The five biggest numbers in descending order are:")
 for x in range(5):
     print(numbers[x])
+
+#3
+
