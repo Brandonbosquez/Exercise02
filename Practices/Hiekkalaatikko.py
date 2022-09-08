@@ -8,9 +8,10 @@ while n != run :
     y = random.uniform(-1, 1)
 
     n = n + 1
-    if ((points[0] ** 2)+ (points[1] ** 2)) < 1 :
+
+    if ( x ** 2)+ ( y  ** 2) < 1 :
         ins = ins + 1
-print(points)
+
 pi = float
 pi = 4 * ins / run
 print("The approximate value of Pi is: ", pi)
