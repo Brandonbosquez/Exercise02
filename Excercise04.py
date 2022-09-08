@@ -80,7 +80,7 @@ print("Program Ended")
 points = []
 
 n = 0
-run = input(int("Amount of points to be generated: "))
+run = int(input("Amount of points to be generated: "))
 while n != run :
     x = random.randint(-1, 1)
     y = random.randint(-1, 1)
