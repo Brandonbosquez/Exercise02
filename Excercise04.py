@@ -75,7 +75,16 @@ if att = 0
     print("ACCESS DENIED")
 Print("Program Ended")
 
-#6
+#6 GENERATING POINTS
+points = []
+
+n = 0
+run = input(int("Amount of points to be generated: "))
+while n != run :
+    x = random.randint(-1, 1)
+    y = random.randint(-1, 1)
+    points.append(x)
+    points.append(y)
 
 
 
