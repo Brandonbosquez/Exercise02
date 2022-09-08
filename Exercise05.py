@@ -35,4 +35,23 @@ for x in range(5):
     print(numbers[x])
 
 #3
+print("NUMBER CLASSIFIER: I will tell you if your number is Prime")
+num = int(input("Please enter your number: "))
+if num > 1:
+    for i in range(2, num//2):
+     if (num % i) == 0:
+        print("The number ", num, " is not a prime number")
+        break
+    else:
+        print("The number ", num, " is a prime number")
+else:
+    print("The number ", num, " is not a prime number")
 
+#4
+city = []
+for x in range(5):
+    name = input("Give me a city: ")
+    city.append(name)
+print("Your cities were:")
+for x in city:
+    print(x)
