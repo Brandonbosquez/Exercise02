@@ -10,13 +10,8 @@ while n <= 1000 :
 #2
 print("Welcome to the Inches to Centimeters converter")
 inch = 1
-<<<<<<< HEAD
-print("If you want to end the program, enter a negative number")
-while inch >= 0 :
-=======
 while inch >= 0 :
     print("If you want to end the program, enter a negative number")
->>>>>>> 2501cfd (commit)
     inch = int(input("Please enter the amount of inches to be converted: "))
     centi = inch * 2.54
     if inch >= 0 :
@@ -24,8 +19,6 @@ while inch >= 0 :
 else:
     print("Program ended, goodbye")
 #3
-<<<<<<< HEAD
-=======
 print("Smallest an biggest number detector")
 number = input("Please enter a number: ")
 least = number
@@ -81,15 +74,18 @@ points = []
 
 n = 0
 run = int(input("Amount of points to be generated: "))
+ins = 0
 while n != run :
     x = random.randint(-1, 1)
     y = random.randint(-1, 1)
-    points.append(x)
-    points.append(y)
+    points.insert(x)
+    points.insert(y)
     n = n + 1
+    if point[0] ** 2 + points[1] ** 2 < 1
+        ins = ins + 1
 print(points)
 
 
 
 
->>>>>>> 2501cfd (commit)
+
