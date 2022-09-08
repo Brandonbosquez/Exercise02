@@ -19,3 +19,16 @@ for rolls in result :
 print("The results of your rolls were: ", result)
 print(sum)
 
+ #2
+print("Give me numbers, I will sort the biggest 5 in descending order")
+numbers = []
+entra = 0
+print("To end the program, press ENTER")
+while entra != "" :
+    entra = input("Input your number: ")
+    if entra != "" :
+        numbers.append(int(entra))
+entra = int
+numbers.sort(reverse=True)
+for x in range(5):
+    print(numbers[x])
