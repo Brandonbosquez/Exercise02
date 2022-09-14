@@ -1,8 +1,11 @@
 #Practicas de correr
-city = []
-for x in range(5):
-    name = input("Give me a city: ")
-    city.append(name)
-print("Your cities were:")
-for x in city:
-    print(x)
+
+def adder(nums):
+  print("here is the sum of the values")
+  for x in nums :
+      x + x
+      return x
+number = [1,2,3,4]
+adder(number)
+
+
