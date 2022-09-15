@@ -1,14 +1,18 @@
 #Practicas de correr
 
-print("NUMBER CLASSIFIER: I will tell you if your number is Prime")
-num = int(input("Please enter your number: "))
-if num > 1:
-    for i in range(2, num//2):
-     if (num % i) == 0:
-        print("The number ", num, " is not a prime number")
-        break
+#2
+
+direc = set()
+print("Give me names and I will tell you if I have them or not")
+print("To end the program enter empty string")
+name = input("Enter a name: ")
+while name != "":
+
+    if name in direc :
+        print("EXISTING NAME")
     else:
-        print("The number ", num, " is a prime number")
-else:
-    print("The number ", num, " is not a prime number")
+        print("NEW NAME")
+    direc.add(name)
+    name = input("Enter a name: ")
+print(direc)
 
