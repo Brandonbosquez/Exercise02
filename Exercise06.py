@@ -37,7 +37,13 @@ else:
 
 #4
 
-
+def adder(list):
+    add = 0
+    for x in range(len(list)):
+        sum += list[x]
+    return sum
+numlist = [850, 980, 130 ]
+print(adder(numlist))
 
 
 #5
