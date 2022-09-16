@@ -21,3 +21,13 @@ while name != "":
     direc.add(name)
     name = input("Enter a name: ")
 print(direc)
+
+#3 Problema 3 ----------------
+print("Welcome to the Airport database")
+data = {"EFHK" : "Helsinki-Vantaa Airport",
+        "MPTO" : "Tocumen International airport",
+        "KMIA" : "Miami International airport"}
+code = input("Please enter the ICAO code of the airport")
+while code != "" :
+    if code in data :
+        print(f"The code {code} corresponds to {data[code]}")
