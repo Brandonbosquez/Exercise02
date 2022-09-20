@@ -1,8 +1,3 @@
-#lugar de practica de programación
-
-
-
-
 print("Compare 5 numbers")
 num1 = input("Enter a number: ")
 num2 = input("Enter a number: ")
