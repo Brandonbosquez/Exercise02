@@ -9,16 +9,16 @@ connection = mysql.connector.connect(
     autocommit = True
     )
 def codex(code):
-    sql = "SELECT name, municipality FROM airport"
-    sql += "WHERE code = ident"
-    print(sql)
+    sql = "select name, municipality from airport where ident = '"
+    sql += code + "' ; "
     cursor = connection.cursor()
     cursor.execute(sql)
-    result = cursor.fetchall()
-    if cursor.rowcount >0 :
-        for row in result :
-            print(f"hola")
+    response = cursor.fetchall()
+    if cursor.rowcount > 0 :
+        for row in response :
+            print(f" Airport named: {row[0]} is located in municipality: {row[1]}")
     return
+
 code = input("Enter ICAO code: ")
 codex(code)
 
