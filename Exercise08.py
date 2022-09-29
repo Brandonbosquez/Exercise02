@@ -19,7 +19,7 @@ def codex(code):
         for row in result :
             print(f"hola")
     return
-code = inpout("Enter ICAO code: ")
+code = input("Enter ICAO code: ")
 codex(code)
 
 

@@ -11,7 +11,7 @@ n = 0
 sum = 0
 while n < roll :
     n = n + 1
-    luck = random.randint(1, 6)
+    luck = random.randint(1, 6)6
     result.append(luck)
 
 for rolls in result :

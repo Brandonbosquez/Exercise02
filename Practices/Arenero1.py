@@ -1,26 +1,19 @@
 #lugar de practica de programación
 
+#Ejercicio 08 RELATIONAL DATABASES
+import mysql.connector
+connection = mysql.connector.connect(
+    host='127.0.0.1',
+    port= 3306,
+    database = 'flight_game',
+    user = 'root',
+    password = 'MariaDB123',
+    autocommit = True
+    )
+def codex(code):
 
-
-
-print("Compare 5 numbers")
-num1 = input("Enter a number: ")
-num2 = input("Enter a number: ")
-num3 = input("Enter a number: ")
-num4 = input("Enter a number: ")
-num5 = input("Enter a number: ")
-
-nums = [num1,num2,num3,num4,num5]
-nums.sort()
-print(nums)
-i = 0
-i2 = 1
-sum = nums[i] + nums[i2]
-while i2 < 5 :
-    if sum < nums[4] :
-
-        if i2 > 4 :
-            break
-        print(f"The sum of {nums[i]} and {nums[i2]} is less than {nums[4]}")
-        i2 += 1
-        sum = nums[i] + nums[i2]
+    sql = "select name and municipality from airport"
+    sql += " where code = ident ; "
+    return sql
+code = input("Enter ICAO code: ")
+codex(code)
