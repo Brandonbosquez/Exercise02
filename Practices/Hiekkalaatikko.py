@@ -11,31 +11,24 @@ connection = mysql.connector.connect(
     autocommit = True
     )
 
-
+user = "Pedrito"
+puntos = 6961
 
 from geopy import distance
-
-airportName = ["", ""]
-airportPos = [[0, 0], [0, 0]]
-
-for i in range(2):
-    airportCode = input(f"Input ICAO code of airport {i + 1}: ")
-
-    sql = "select name, latitude_deg, longitude_deg from airport "
-    sql += "where ident = '" + airportCode + "'"
-
+def highscore_set(username,score):
+    sql = "select Highscore from game where id = '1' ; "
     cursor = connection.cursor()
     cursor.execute(sql)
     result = cursor.fetchall()
+    print(result[0][0])
+    points = int(result[0][0])
+    if cursor.rowcount > 0:
+        if points < score :
 
-    airportName[i] = result[0][0]
-    airportPos[i][0] = result[0][1]
-    airportPos[i][1] = result[0][2]
-
-    #print latitude and longitude of airport
-    #print(airportPos[i][0])
-    #print(airportPos[i][1])
-
-
-print(f"Distance between {airportName[0]} and {airportName[1]} is ", end = '')
-print(f"{distance.distance(airportPos[0], airportPos[1]).km:.3f} km")
+            sql2 = "UPDATE game SET Highscore = '"
+            sql2 += str(score) + "', screen_name = '"
+            sql2 += username + "' WHERE id = '1' ; "
+            cursor = connection.cursor()
+            cursor.execute(sql2)
+highscore_set(user,puntos)
+print("DONEEEE")
