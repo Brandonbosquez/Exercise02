@@ -44,6 +44,16 @@ print(f"Elevator created with BOTTOM FLOOR: {h.bottom_floor} and TOP FLOOR: {h.t
       f"\n CURRENT FLOOR: {h.current_floor}")
 goto = int(input("To what floor should the elevator go?: "))
 while goto != "" :
-    h.go_to_floor(goto)
+    h.go_to_floor(int(goto))
     print("To end pres ENTER")
-    goto = int(input("To what floor should the elevator go?: "))
+    goto = input("To what floor should the elevator go?: ")
+
+#Problem 2
+print("PROBLEMA 2 :D")
+
+class Building:
+    def __init__(self, bottom, top, elevators):
+        self.bottom_floor = bottom
+        self.top_floor = top
+        self.num_of_elevators = elevators
+
