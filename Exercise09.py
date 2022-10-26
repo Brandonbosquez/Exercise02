@@ -151,6 +151,8 @@ print("1, 2, 3 ..." "\nGOOO!!!")
 while True:
     for i in range(10):
         acc_cha = random.randint(-10 , 15)
+        race_cars[i].accelerate(acc_cha)
+        race_cars[i].drive(1)
     if race_cars[i].dis_tra > 10000:
         print("Race ended")
         break
