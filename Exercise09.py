@@ -162,3 +162,4 @@ print(f"RACE RESULTS"
 
 for i in range(10):
     print(f"{race_cars[i].reg_num}      {race_cars[i].max_spe}                {race_cars[i].cur_spe}                     {race_cars[i].dis_tra}")
+
