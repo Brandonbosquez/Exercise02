@@ -60,7 +60,10 @@ class Building:
         for i in range(int(self.num_of_elevators)):
             hissi = Elevator(self.bottom_floor,self.top_floor)
             self.building_ele.append(hissi)
-        print(self.building_ele)
+
+    def run_elevator(self, destination):
+        elevator_num = int(destination) + 1
+        print(f"Elevator #{destination} is currently at floor #{self.building_ele[elevator_num].current_floor})")
 
 print("Let's create a building with different elevators")
 bot_floor = input("What will be the bottom floor?: ")
