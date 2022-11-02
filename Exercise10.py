@@ -53,7 +53,19 @@ print("PROBLEMA 2 :D")
 
 class Building:
     def __init__(self, bottom, top, elevators):
-        self.bottom_floor = bottom
-        self.top_floor = top
-        self.num_of_elevators = elevators
+        self.bottom_floor = int(bottom)
+        self.top_floor = int(top)
+        self.num_of_elevators = int(elevators)
+        self.building_ele = []
+        for i in range(int(self.num_of_elevators)):
+            hissi = Elevator(self.bottom_floor,self.top_floor)
+            self.building_ele.append(hissi)
+        print(self.building_ele)
+
+print("Let's create a building with different elevators")
+bot_floor = input("What will be the bottom floor?: ")
+top_floor = input("What will be the top floor?: ")
+num_elevators = input("How many elevators will the building have?: ")
+
+building1 = Building(bot_floor,top_floor,num_elevators)
 
