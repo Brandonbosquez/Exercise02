@@ -28,7 +28,7 @@ class Car4:
         return self.dis_tra
 
 
-class Race:
+class Race(Car4):
     def __init__(self, name, distance, race_cars):
         self.name = name
         self.distance = distance
@@ -36,8 +36,8 @@ class Race:
     def hour_passes(self):
         for i in range(10):
             acc_cha = random.randint(-10, 15)
-            self.race_cars[i].accelerate(acc_cha)
-            self.race_cars[i].drive(1)
+            self.race_cars[i] = super().accelerate(acc_cha)
+            self.race_cars[i] = super().drive(1)
 
 
     def print_status(self):
@@ -45,13 +45,11 @@ class Race:
               f"\nPlate     Max Speed      Current Speed       Distance Travelled       ")
 
         for i in range(10):
-            print(
-                f"{self.race_cars[i].reg_num}      {self.race_cars[i].max_spe}                {self.race_cars[i].cur_spe}                     {self.race_cars[i].dis_tra}")
-
+            print(f"{self.race_cars[i]}")
 
     def race_finished(self):
         for i in range(10):
-            if self.race_cars[i].dis_tra > 10000:
+            if self.race_cars[i] = > self.distance :
                 print("RACE FINISHED")
                 status == True
                 break
@@ -72,4 +70,25 @@ for x in range(10):
         print(f"░░██░░██░░██░░██░░██░░██░░██░░██░░██░░██""\n██░░██░░██░░██░░██░░██░░██░░██░░██░░██░░")
 
 
+
+
+race = Race("Grand Demolition Derby",8000,race_cars)
+print(f"Race called: {race.name} has been created")
 print("1, 2, 3 ..." "\nGOOO!!!")
+print(f"░░██░░██░░██░░██░░██░░██░░██░░██░░██░░██""\n██░░██░░██░░██░░██░░██░░██░░██░░██░░██░░")
+
+print(f"RACE RESULTS"
+      f"\nPlate     Max Speed      Current Speed       Distance Travelled       ")
+
+for i in range(10):
+    print(f"{race_cars[i].reg_num} HEHEHE")
+
+
+
+hours = 1
+while True:
+    race.hour_passes()
+    hours += 1
+    if hours % 10 == 0:
+        race.print_status()
+
