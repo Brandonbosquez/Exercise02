@@ -1,5 +1,6 @@
 #Practicas de experimento caja de arena
 
+import random
 class Car4:
     def __init__(self, reg_num, max_spe):
         self.reg_num = reg_num
@@ -27,30 +28,48 @@ class Car4:
         return self.dis_tra
 
 
+class Race:
+    def __init__(self, name, distance, race_cars):
+        self.name = name
+        self.distance = distance
+        self.race_cars = race_cars
+    def hour_passes(self):
+        for i in range(10):
+            acc_cha = random.randint(-10, 15)
+            self.race_cars[i].accelerate(acc_cha)
+            self.race_cars[i].drive(1)
+
+
+    def print_status(self):
+        print(f"CURRENT STATUS"
+              f"\nPlate     Max Speed      Current Speed       Distance Travelled       ")
+
+        for i in range(10):
+            print(
+                f"{self.race_cars[i].reg_num}      {self.race_cars[i].max_spe}                {self.race_cars[i].cur_spe}                     {self.race_cars[i].dis_tra}")
+
+
+    def race_finished(self):
+        for i in range(10):
+            if self.race_cars[i].dis_tra > 10000:
+                print("RACE FINISHED")
+                status == True
+                break
+        return status
+
+
 race_cars = []
 
 for x in range(10):
     x += 1
     reg_num = "ABC-" + str(x)
-    max_spe = random.randint(100,200)
-    c = Car4(reg_num,max_spe)
+    max_spe = random.randint(100, 200)
+    c = Car4(reg_num, max_spe)
     race_cars.append(c)
     print(f"Car {x} created")
+    if x == 10 :
+        print("Cars are ready for the race ")
+        print(f"░░██░░██░░██░░██░░██░░██░░██░░██░░██░░██""\n██░░██░░██░░██░░██░░██░░██░░██░░██░░██░░")
 
-print("Cars ready for race")
+
 print("1, 2, 3 ..." "\nGOOO!!!")
-
-while True:
-    for i in range(10):
-        acc_cha = random.randint(-10 , 15)
-        race_cars[i].accelerate(acc_cha)
-        race_cars[i].drive(1)
-    if race_cars[i].dis_tra > 10000:
-        print("Race ended")
-        break
-
-print(f"RACE RESULTS"
-      f"\nPlate     Max Speed      Current Speed       Distance Travelled       ")
-
-for i in range(10):
-    print(f"{race_cars[i].reg_num}      {race_cars[i].max_spe}                {race_cars[i].cur_spe}                     {race_cars[i].dis_tra}")
