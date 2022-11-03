@@ -14,11 +14,10 @@ class Car4:
             self.cur_spe += spe_cha
         elif acc_prueba > self.max_spe:
             self.cur_spe = self.max_spe
-            print(
-                f"The car's speed cannot exceed the maximum speed of the car, the speed maxes out at {self.cur_spe} km/h ")
+            #print( f"The car's speed cannot exceed the maximum speed of the car, the speed maxes out at {self.cur_spe} km/h ")
         elif acc_prueba < 0:
             self.cur_spe = 0
-            print(f"The car's speed cannot be less than 0,the car comes to a stop")
+            #print(f"The car's speed cannot be less than 0,the car comes to a stop")
         else:
             print("Speed change cannot be made")
         return self.cur_spe
@@ -34,26 +33,33 @@ class Race(Car4):
         self.distance = distance
         self.race_cars = race_cars
     def hour_passes(self):
-        for i in range(10):
-            acc_cha = random.randint(-10, 15)
-            self.race_cars[i] = super().accelerate(acc_cha)
-            self.race_cars[i] = super().drive(1)
+        for i in self.race_cars:
+            if i.dis_tra < self.distance:
+                i.accelerate(random.randint(-10, 15))
+                i.drive(1)
 
 
     def print_status(self):
         print(f"CURRENT STATUS"
               f"\nPlate     Max Speed      Current Speed       Distance Travelled       ")
 
-        for i in range(10):
-            print(f"{self.race_cars[i]}")
+        for i in self.race_cars:
+            print(
+                f"{i.reg_num}      {i.max_spe}                {i.cur_spe}                     {i.dis_tra}")
 
     def race_finished(self):
-        for i in range(10):
-            if self.race_cars[i] = > self.distance :
+        for i in self.race_cars:
+            if i.dis_tra >= self.distance :
                 print("RACE FINISHED")
-                status == True
+                print(f"FINAL STATUS"
+                      f"\nPlate     Max Speed      Current Speed       Distance Travelled       ")
+
+                for i in self.race_cars:
+                    print(
+                        f"{i.reg_num}      {i.max_spe}                {i.cur_spe}                     {i.dis_tra}")
                 break
-        return status
+            else:
+                break
 
 
 race_cars = []
@@ -70,25 +76,30 @@ for x in range(10):
         print(f"░░██░░██░░██░░██░░██░░██░░██░░██░░██░░██""\n██░░██░░██░░██░░██░░██░░██░░██░░██░░██░░")
 
 
-
-
 race = Race("Grand Demolition Derby",8000,race_cars)
-print(f"Race called: {race.name} has been created")
+print(f"Race called: {race.name}, has been created")
 print("1, 2, 3 ..." "\nGOOO!!!")
 print(f"░░██░░██░░██░░██░░██░░██░░██░░██░░██░░██""\n██░░██░░██░░██░░██░░██░░██░░██░░██░░██░░")
 
-print(f"RACE RESULTS"
-      f"\nPlate     Max Speed      Current Speed       Distance Travelled       ")
+"""while True :
+    for i in race.race_cars:
+        race.hour_passes()
+        hours += 1
+        if hours % 10 == 0:
+            race.print_status()
+        race.race_finished()
+    break"""
 
-for i in range(10):
-    print(f"{race_cars[i].reg_num} HEHEHE")
-
-
-
+a = True
 hours = 1
-while True:
-    race.hour_passes()
-    hours += 1
-    if hours % 10 == 0:
-        race.print_status()
+while a == True:
+    for i in race.race_cars:
+        a = race.distance > i.dis_tra
+        race.hour_passes()
+        hours += 1
+        race.race_finished()
+        if hours % 10 == 0:
+            race.print_status()
+
+print(f"FINALLLLLLL" "\n ░░██░░██░░██░░██░░██░░██░░██░░██░░██░░██")
 
