@@ -53,10 +53,8 @@ class Race(Car4):
                 print("RACE FINISHED")
                 print(f"FINAL STATUS"
                       f"\nPlate     Max Speed      Current Speed       Distance Travelled       ")
-
                 for i in self.race_cars:
-                    print(
-                        f"{i.reg_num}      {i.max_spe}                {i.cur_spe}                     {i.dis_tra}")
+                    print(f"{i.reg_num}      {i.max_spe}                {i.cur_spe}                     {i.dis_tra}")
                 break
             else:
                 break
