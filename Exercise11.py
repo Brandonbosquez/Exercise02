@@ -29,3 +29,43 @@ magazine1 = Magazine("Compartment No.6","Rosa Liksom",192)
 
 book1.print_information()
 magazine1.print_information()
+
+#EXERCISE 2
+print("EXERCISE 2 <3")
+class Car:
+
+    def __init__(self, reg_number, max_speed, current_speed=0, traveled_distance=0):
+        self.reg_number = reg_number
+        self.max_speed = max_speed
+        self.current_speed = current_speed
+        self.current_speed = self.max_speed
+        self.traveled_distance = traveled_distance
+
+    def accelerate(self, speed_change):
+        self.current_speed += speed_change
+        if self.current_speed > self.max_speed:
+            self.current_speed = self.max_speed
+        if self.current_speed < 0:
+            self.current_speed = 0
+
+    def drive(self, time):
+        self.traveled_distance += time * self.current_speed
+class ElectricCar(Car):
+    def __init__(self,reg_number,max_speed,battery):
+        Car.__init__(self,reg_number,max_speed)
+        self.battery = battery
+
+class GasolineCar(Car):
+    def __init__(self,reg_number,max_speed,tank):
+        Car.__init__(self,reg_number,max_speed)
+        self.tank = tank
+
+electric = ElectricCar("ABC-15", 180, "52.5 kWh")
+gasoline = GasolineCar("ACD-123", 165, "32.3 l")
+
+electric.drive(3)
+gasoline.drive(3)
+
+print(f"PLATE     MAX SPEED      DISTANCE TRAVELED      BATTERY/TANK CAPACITY")
+print(f"{electric.reg_number}     {electric.max_speed}km/h            {electric.traveled_distance}km                    {electric.battery}")
+print(f"{gasoline.reg_number}    {gasoline.max_speed}km/h            {gasoline.traveled_distance}km                    {gasoline.tank}")
