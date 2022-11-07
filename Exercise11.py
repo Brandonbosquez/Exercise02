@@ -31,7 +31,7 @@ book1.print_information()
 magazine1.print_information()
 
 #EXERCISE 2
-print("EXERCISE 2 <3")
+print(f"\nEXERCISE 2 <3")
 class Car:
 
     def __init__(self, reg_number, max_speed, current_speed=0, traveled_distance=0):
@@ -65,7 +65,7 @@ gasoline = GasolineCar("ACD-123", 165, "32.3 l")
 
 electric.drive(3)
 gasoline.drive(3)
-
+print(f"\n░░██░░██░░██░░██░░██░░██░░██░░██░░██░░██""\n██░░██░░██░░██░░██░░██░░██░░██░░██░░██░░")
 print(f"PLATE     MAX SPEED      DISTANCE TRAVELED      BATTERY/TANK CAPACITY")
 print(f"{electric.reg_number}     {electric.max_speed}km/h            {electric.traveled_distance}km                    {electric.battery}")
 print(f"{gasoline.reg_number}    {gasoline.max_speed}km/h            {gasoline.traveled_distance}km                    {gasoline.tank}")
