@@ -8,19 +8,17 @@ app = Flask(__name__)
 @app.route('/primer/<number>')
 def primer(number):
     try:
-        number = float(number)
-        answer = "no sé"
         if number > 1:
-            for i in range(2, number // 2):
+            for i in range(2, number):
                 if (number % i) == 0:
                     answer = "false"
-                    return answer
-            else:
-                answer = "true"
-                return answer
+                    break
+                else:
+                    answer = "true"
+                    break
         else:
-            answer = "false"
-            return answer
+            answer = "true"
+
         response = {
             "Number": number,
             "isPrime": answer,
