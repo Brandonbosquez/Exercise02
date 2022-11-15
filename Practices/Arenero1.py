@@ -4,18 +4,34 @@ import json
 from flask import Flask, Response
 
 app = Flask(__name__)
-@app.route('/sum/<number1>/<number2>')
-def summa(number1, number2):
+
+#PROBLEM 2
+print('PROBLEM 2 ^o^')
+import mysql.connector
+connection = mysql.connector.connect(
+    host='127.0.0.1',
+    port= 3306,
+    database ='flight_game',
+    user = 'root',
+    password = 'MariaDB123',
+    autocommit = True
+    )
+@app.route('/airport/<code>')
+def airport(code):
     try:
-        number1 = float(number1)
-        number2 = float(number2)
-        sum = number1+number2
+        sql = "select name, municipality from airport where ident = '"
+        sql += code + "' ; "
+        cursor = connection.cursor()
+        cursor.execute(sql)
+        respons = cursor.fetchall()
+
+        airportname = respons[0][0]
+        location = respons[0][1]
+
         response = {
-            "number1" : number1,
-            "number2" : number2,
-            "sum" : sum,
-            "status" : 200
-        }
+            "ICAO": code,
+            "Name": airportname,
+            "Location": location, }
         return response
 
     except ValueError:
@@ -26,7 +42,6 @@ def summa(number1, number2):
         json_response = json.dumps(response)
         http_response = Response(response=json_response, status=400, mimetype="application/json")
         return http_response
-
 @app.errorhandler(404)
 def page_not_found(error_code):
     response = {
@@ -38,7 +53,7 @@ def page_not_found(error_code):
     return http_response
 
 if __name__ == '__main__':
-    app.run(use_reloader=True, host='127.0.0.1', port=5000)
+    app.run(use_reloader=True, host='127.0.0.1', port=5005)
 
 
 
