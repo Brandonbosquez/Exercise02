@@ -1,7 +1,7 @@
 #Practicas de experimento caja de arena
 
 import random
-number = 14
+number = 5
 if number > 1:
     for i in range(2, number):
         if (number % i) == 0:
