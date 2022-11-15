@@ -1,20 +1,29 @@
-#lugar de practica de programación
+#EXERCISE 13
+#PROBLEM 1
 import json
 
 from flask import Flask, Response
 
 app = Flask(__name__)
-@app.route('/sum/<number1>/<number2>')
-def summa(number1, number2):
+@app.route('/primer/<number>')
+def primer(number):
     try:
-        number1 = float(number1)
-        number2 = float(number2)
-        sum = number1+number2
+        number = float(number)
+        answer = "no sé"
+        if number > 1:
+            for i in range(2, number // 2):
+                if (number % i) == 0:
+                    answer = "false"
+                    return answer
+            else:
+                answer = "true"
+                return answer
+        else:
+            answer = "false"
+            return answer
         response = {
-            "number1" : number1,
-            "number2" : number2,
-            "sum" : sum,
-            "status" : 200
+            "Number": number,
+            "isPrime": answer,
         }
         return response
 
@@ -40,7 +49,4 @@ def page_not_found(error_code):
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=5000)
 
-
-
-
-
+#http://127.0.0.1:5000/primer/00
